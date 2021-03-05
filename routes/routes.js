@@ -3,31 +3,7 @@ const router = express.Router();
 const Customer = require("../models/customer");
 const bcrypt = require("bcrypt");
 
-// router.post("/addcustomer", async (req, res) => {
-//   const saltPassword = await bcrypt.genSalt(10);
-//   const securePassword = await bcrypt.hash(req.body.password, saltPassword);
-//   const addCust = new Customer({
-//     firsname: req.body.firstname,
-//     lastname: req.body.lastname,
-//     phone: req.body.phone,
-//     email: req.body.email,
-//     password: securePassword,
-//   });
-
-//   console.log(addCust, "AddCust");
-
-//   addCust
-//     .save()
-//     .then((data) => {
-//       console.log("data", data);
-//       res.json(data);
-//     })
-//     .catch((err) => {
-//       console.log("Error");
-//       res.json(err);
-//     });
-// });
-
+//Add new customer user
 router.post("/addcustomer", async (req, res) => {
   //Check if email is used!
   const addCust = await Customer.findOne({
@@ -66,3 +42,26 @@ router.post("/addcustomer", async (req, res) => {
 });
 
 module.exports = router;
+
+//login customer user
+
+router.post("/logincustomer", async (req, res) => {
+  //checking if there is an account for this email
+  const email = req.body.email;
+  const user = await Customer.findOne({ email });
+  if (!user) {
+    return res.status(400).send("there is no account with this email");
+  }
+
+  //checking if password is correct
+  console.log(req.body.password, "password");
+  const validpassword = bcrypt.compareSync(req.body.password, user.password);
+  if (!validpassword) return res.status(400).send("password not correct");
+
+  //create and send a token
+  // const token = jwt.sign({ _id: user._id }, process.env.JWT_SECRET);
+  // var decoded = jwt_decode(token);
+  // res
+  //   .header("addUser-token", token, email, username)
+  //   .json({ token, email, username });
+});

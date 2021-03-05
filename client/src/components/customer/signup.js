@@ -99,7 +99,9 @@ export default class Signup extends Component {
     };
     axios
       .post("/app/addcustomer", customer)
-      .then((res) => {})
+      .then((res) => {
+        // window.location = "/app/login";
+      })
       .catch((err) => alert("email already exists"));
   }
 
@@ -189,7 +191,9 @@ export default class Signup extends Component {
             <input type="button" value="Sign up" onClick={this.handleClick} />
             <br></br>
             <br></br>
-            <b>{/* have an account?<a href="/login"> Login </a> */}</b>
+            <b>
+              have an account?<a href="/login"> Login </a>
+            </b>
             <br></br>
           </form>
         </div>

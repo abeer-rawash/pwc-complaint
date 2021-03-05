@@ -59,11 +59,11 @@ export default class Login extends Component {
       password: this.state.password,
     };
     axios
-      .post("/addUser/adduser", user)
+      .post("/app/logincustomer", user)
       .then((res) => {
-        window.location = "/login";
+        console.log(res);
       })
-      .catch((err) => alert("work on backend girl"));
+      .catch((err) => alert("wrong email or password"));
   }
 
   render() {
