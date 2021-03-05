@@ -24,7 +24,6 @@ export default class Signup extends Component {
   }
 
   onChangeHandle(event) {
-    console.log(event.target.name);
     this.setState({ [event.target.name]: event.target.value });
   }
 

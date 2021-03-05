@@ -9,10 +9,10 @@ const Complaint = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Customer",
     },
-    nowTime: {
+    complaintType: {
       type: String,
     },
-    complaintType: {
+    complaintTitle: {
       type: String,
     },
     url: {
