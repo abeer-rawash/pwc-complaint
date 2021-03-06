@@ -3,7 +3,6 @@ import { withRouter } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
 import Navbar from "./nav";
-// import { Form, DropdownButton } from "react-bootstrap";
 const Complaints = (props) => (
   <tr>
     <td>{props.complaint.date}</td>

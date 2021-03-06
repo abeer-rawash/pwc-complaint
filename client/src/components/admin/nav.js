@@ -54,31 +54,6 @@ export default class Navbar extends Component {
           </div>
         </nav>
       </div>
-      // <div>
-      //   <nav
-      //     style={{ color: "red" }}
-      //     className="navbar navbar-dark bg-dark navbar-expand-lg"
-      //   >
-      //     <Link to="/complaints" className="navbar-brand">
-      //       ABC
-      //     </Link>
-
-      //     <div className="collpase navbar-collapse">
-      //       <ul className="navbar-nav mr-auto">
-      //         <li className="navbar-item">
-      //           <Link to="/complaints" className="nav-link">
-      //             Complaints
-      //           </Link>
-      //         </li>
-      //         <li className="navbar-item" onClick={logout}>
-      //           <Link to="/logout" className="nav-link">
-      //             Log out
-      //           </Link>
-      //         </li>
-      //       </ul>
-      //     </div>
-      //   </nav>
-      // </div>
     );
   }
 }

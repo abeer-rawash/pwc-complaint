@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import jwt_decode from "jwt-decode";
 import Navbar from "./nav";
-// import { withRouter } from "react-router-dom";
 
 export default class AddComplaint extends Component {
   constructor(props) {

@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { links, withRouter } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./nav";
-// import Footer from "./Footer";
 import { Form, DropdownButton } from "react-bootstrap";
 const Complaints = (props) => (
   <tr>
@@ -14,7 +13,6 @@ const Complaints = (props) => (
     <td>{props.complaint.complaintStatus}</td>
     <td>
       <button
-        // style={{ width: 120, height: 40, background: "yellow" }}
         style={{
           width: "100px",
           height: "40px",

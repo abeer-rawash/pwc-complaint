@@ -22,19 +22,6 @@ function App() {
         <Route path="/loginA" component={LoginA} />
         <Route path="/complaints" component={AllComplaints} />
         <Route path="/edit/:id" component={EditComplaint} />
-        {/* <ProtectedRoute
-          path="/ItemsList"
-          component={ItemsList}
-          isAuth={localStorage.length > 0}
-        />
-        <ProtectedRoute
-          path="/addItems"
-          component={AddItems}
-          isAuth={localStorage.length > 0}
-        />
-        <Route path="/addUser" component={Signup} />
-        <Route path="/login" component={Login} />
-        */}
       </div>
     </Router>
   );
