@@ -51,7 +51,7 @@ export default class EditComplaint extends Component {
       )
       .then((res) => console.log(res.data));
 
-    // window.location = "/complaints";
+    window.location = "/complaints";
   }
 
   render() {
@@ -60,19 +60,19 @@ export default class EditComplaint extends Component {
         <Navbar />
         <div
           style={{
-            marginTop: "100px",
-            border: "2px solid",
-            height: "400px",
+            height: "350px",
             width: "600px",
+            border: "2px solid #9AB973",
+            padding: "50px 30px 30px 30px",
+            margin: "7% 0% 0% 30%",
+            borderRadius: "10px",
           }}
           className="container"
         >
           <form
             style={{
-              padding: "40px",
-              marginTop: "30px",
+              padding: "15px 30px 30px 30px",
             }}
-            // className=" border border-red p-5"
             action="#!"
             onSubmit={this.onSubmit}
           >

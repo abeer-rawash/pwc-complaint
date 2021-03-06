@@ -300,6 +300,25 @@ export default class Signup extends Component {
             onClick={this.handleClick}
           />
         </Form>
+        <b
+          style={{
+            marginLeft: "100px",
+            paddingBottom: "30px",
+            color: "#4682B4",
+          }}
+        >
+          Already have an account?
+          <a
+            style={{
+              textDecoration: "none",
+              color: "#26468A",
+            }}
+            href="/loginC"
+          >
+            {" "}
+            login{" "}
+          </a>{" "}
+        </b>
       </div>
     );
   }

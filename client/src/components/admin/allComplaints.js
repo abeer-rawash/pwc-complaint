@@ -14,7 +14,15 @@ const Complaints = (props) => (
     <td>{props.complaint.complaintStatus}</td>
     <td>
       <button
-        style={{ width: 120, height: 40, background: "yellow" }}
+        // style={{ width: 120, height: 40, background: "yellow" }}
+        style={{
+          width: "100px",
+          height: "40px",
+          borderRadius: "10px",
+          color: "white",
+          background: "#9AB973",
+          fontWeight: "bold",
+        }}
         type="button"
         className="btn btn-deep-orange darken-4"
         onClick={() => {

@@ -148,7 +148,7 @@ export default class Login extends Component {
               marginTop: "60px",
               marginLeft: "170px",
               color: "white",
-              background: "#9AB973",
+              background: "#26468A",
               fontWeight: "bold",
             }}
             type="button"
@@ -157,7 +157,7 @@ export default class Login extends Component {
           />
           <p
             style={{
-              color: "#84aa55",
+              color: "#4682B4",
               marginTop: "50px",
               marginLeft: "100px",
             }}
@@ -167,7 +167,7 @@ export default class Login extends Component {
               style={{
                 color: "",
                 textDecoration: "none",
-                color: " #4f6633",
+                color: "#26468A",
               }}
               href="signupC"
             >
@@ -176,51 +176,6 @@ export default class Login extends Component {
           </p>
         </Form>
       </div>
-
-      // <div>
-      //   <br />
-      //   <div className="container text-center">
-      //     <form className="text-center border border-light p-9">
-      //       <h3 className="mb-3">Login</h3>
-      //       <br />
-      //       <div className="col">
-      //         <label> E-mail </label>
-      //         <br></br>
-      //         <input
-      //           required={true}
-      //           type="text"
-      //           className="form-control col"
-      //           name="email"
-      //           value={this.setState.email}
-      //           onChange={this.onChangeHandle}
-      //           placeholder="E-mail"
-      //         />
-      //         <div style={{ color: "red" }}>{this.state.emailError}</div>
-      //         <br></br>
-      //       </div>
-      //       <div className="col">
-      //         <label> Password </label>
-      //         <br></br>
-      //         <input
-      //           required={true}
-      //           type="password"
-      //           className="form-control col"
-      //           name="password"
-      //           value={this.setState.password}
-      //           onChange={this.onChangeHandle}
-      //           placeholder="Password"
-      //         />
-      //         <div style={{ color: "red" }}>{this.state.passwordError}</div>
-      //         <br></br>
-      //       </div>
-      //       <input type="button" value="Login" onClick={this.handleClick} />
-      //       <br></br>
-      //       <p>
-      //         Don't have an account <a href="signupC">sign up</a>
-      //       </p>
-      //     </form>
-      //   </div>
-      // </div>
     );
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect } from "react-router";
+import { Form } from "react-bootstrap";
 
 export default class Login extends Component {
   constructor(props) {
@@ -70,53 +70,158 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
-        <br />
-        <div className="container text-center">
-          <form className="text-center border border-light p-9">
-            <h3 className="mb-3">Login</h3>
-            <br />
-            <div className="col">
-              <label> E-mail </label>
-              <br></br>
-              <input
-                required={true}
-                type="text"
-                className="form-control col"
-                name="email"
-                value={this.setState.email}
-                onChange={this.onChangeHandle}
-                placeholder="E-mail"
-              />
-              <div style={{ color: "red" }}>{this.state.emailError}</div>
-              <br></br>
+      <div
+        style={{
+          width: "500px",
+          height: "450px",
+          border: "2px solid #9AB973",
+          padding: "50px 30px 30px 30px",
+          margin: "7% 0% 0% 35%",
+          borderRadius: "10px",
+        }}
+      >
+        <Form>
+          <Form.Group controlId="formBasicEmail">
+            <label
+              style={{
+                fontSize: "20px",
+                paddingBottom: "5px",
+              }}
+            >
+              E-mail
+            </label>
+            <input
+              required={true}
+              className="form-control col"
+              name="email"
+              value={this.setState.email}
+              onChange={this.onChangeHandle}
+              placeholder="Enter E-mail"
+              type="text"
+              class="form-control"
+              style={{
+                height: "40px",
+              }}
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+            <div style={{ color: "red", fontSize: "15px" }}>
+              {this.state.emailError}
             </div>
-            <div className="col">
-              <label> Password </label>
-              <br></br>
-              <input
-                required={true}
-                type="password"
-                className="form-control col"
-                name="password"
-                value={this.setState.password}
-                onChange={this.onChangeHandle}
-                placeholder="Password"
-              />
-              <div style={{ color: "red" }}>{this.state.passwordError}</div>
-              <br></br>
-            </div>
+          </Form.Group>
 
-            <input type="button" value="Login" onClick={this.handleClick} />
-            <br></br>
-            <br></br>
-            <br></br>
-            <p>
-              Don't have an account <a href="signupA">sign up</a>
-            </p>
-          </form>
-        </div>
+          <Form.Group controlId="formBasicPassword">
+            <label
+              style={{
+                fontSize: "20px",
+                paddingBottom: "5px",
+                paddingTop: "20px",
+              }}
+            >
+              Password
+            </label>
+            <input
+              required={true}
+              type="password"
+              className="form-control col"
+              name="password"
+              value={this.setState.password}
+              onChange={this.onChangeHandle}
+              placeholder=" Enter Password"
+              class="form-control"
+              style={{
+                height: "40px",
+              }}
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+            <div style={{ color: "red", fontSize: "15px" }}>
+              {this.state.passwordError}
+            </div>
+          </Form.Group>
+          <input
+            style={{
+              width: "100px",
+              height: "40px",
+              borderRadius: "10px",
+              marginTop: "60px",
+              marginLeft: "170px",
+              color: "white",
+              background: "#9AB973",
+              fontWeight: "bold",
+            }}
+            type="button"
+            value="Login"
+            onClick={this.handleClick}
+          />
+          <p
+            style={{
+              color: "#84aa55",
+              marginTop: "50px",
+              marginLeft: "100px",
+            }}
+          >
+            Don't have an account?{" "}
+            <a
+              style={{
+                color: "",
+                textDecoration: "none",
+                color: " #4f6633",
+              }}
+              href="signupC"
+            >
+              sign up
+            </a>{" "}
+          </p>
+        </Form>
       </div>
+      // <div>
+      //   <br />
+      //   <div className="container text-center">
+      //     <form className="text-center border border-light p-9">
+      //       <h3 className="mb-3">Login</h3>
+      //       <br />
+      //       <div className="col">
+      //         <label> E-mail </label>
+      //         <br></br>
+      //         <input
+      //           required={true}
+      //           type="text"
+      //           className="form-control col"
+      //           name="email"
+      //           value={this.setState.email}
+      //           onChange={this.onChangeHandle}
+      //           placeholder="E-mail"
+      //         />
+      //         <div style={{ color: "red" }}>{this.state.emailError}</div>
+      //         <br></br>
+      //       </div>
+      //       <div className="col">
+      //         <label> Password </label>
+      //         <br></br>
+      //         <input
+      //           required={true}
+      //           type="password"
+      //           className="form-control col"
+      //           name="password"
+      //           value={this.setState.password}
+      //           onChange={this.onChangeHandle}
+      //           placeholder="Password"
+      //         />
+      //         <div style={{ color: "red" }}>{this.state.passwordError}</div>
+      //         <br></br>
+      //       </div>
+
+      //       <input type="button" value="Login" onClick={this.handleClick} />
+      //       <br></br>
+      //       <br></br>
+      //       <br></br>
+      //       <p>
+      //         Don't have an account <a href="signupA">sign up</a>
+      //       </p>
+      //     </form>
+      //   </div>
+      // </div>
     );
   }
 }
