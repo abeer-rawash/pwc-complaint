@@ -39,27 +39,24 @@ export default class Signup extends Component {
     let emailError = "";
     let passwordError = "";
     if (!this.state.firstname) {
-      firstnameError = "First Name is required";
+      firstnameError = "first name is required";
     }
     if (!this.state.lastname) {
-      lastnameError = "Last Name is required";
+      lastnameError = "last name is required";
     }
     if (!this.state.email) {
       emailError = "Email is required";
     }
-    if (!this.state.email.includes("@")) {
-      emailError = "Invalid Email";
-    }
 
     if (!this.state.phone) {
-      phoneError = "Phone Number is required";
+      phoneError = "phone number is required";
     }
     if (this.state.phone.match(/\D/g) || this.state.phone.length < 10) {
-      phoneError = "Invalid Phone Number";
+      phoneError = "invalid phone Number";
     }
 
     if (!this.state.password) {
-      passwordError = "Password is required";
+      passwordError = "password is required";
     }
 
     if (
@@ -83,6 +80,7 @@ export default class Signup extends Component {
 
   handleSubmit = (event) => {
     const isValid = this.validate();
+    console.log(isValid, "isValid");
     if (isValid) {
       console.log(this.state);
     }
@@ -99,9 +97,9 @@ export default class Signup extends Component {
     axios
       .post("/app/addcustomer", customer)
       .then((res) => {
-        // window.location = "/app/login";
+        window.location = "/loginC";
       })
-      .catch((err) => alert("email already exists"));
+      .catch((err) => console.log("email already exists"));
   }
 
   render() {
@@ -110,7 +108,9 @@ export default class Signup extends Component {
         <br />
         <div className="container text-center">
           <form className="text-center border border-light p-9">
-            <b>{/* sign up as an Admin?<a href="/login"> sign up </a> */}</b>
+            <b>
+              sign up as an Admin?<a href="/signupA"> sign up </a>
+            </b>
             <br />
             <div className="col">
               <label> First Name </label>
@@ -191,7 +191,7 @@ export default class Signup extends Component {
             <br></br>
             <br></br>
             <b>
-              have an account?<a href="/login"> Login </a>
+              have an account?<a href="/loginC"> Login </a>
             </b>
             <br></br>
           </form>

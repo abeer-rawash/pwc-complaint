@@ -4,6 +4,7 @@ const Complaint = new mongoose.Schema(
   {
     complaintMsg: {
       type: String,
+      required: true,
     },
     customerId: {
       type: mongoose.Schema.Types.ObjectId,
@@ -15,9 +16,11 @@ const Complaint = new mongoose.Schema(
     },
     complaintType: {
       type: String,
+      required: true,
     },
     complaintTitle: {
       type: String,
+      required: true,
     },
     url: {
       type: String,

@@ -17,7 +17,6 @@ export default class Login extends Component {
   }
 
   onChangeHandle(event) {
-    console.log(event.target.name);
     this.setState({ [event.target.name]: event.target.value });
   }
 
@@ -29,11 +28,11 @@ export default class Login extends Component {
     let emailError = "";
     let passwordError = "";
     if (!this.state.email) {
-      emailError = "Email is required";
+      emailError = "email is required";
     }
 
     if (!this.state.password) {
-      passwordError = "Password is required";
+      passwordError = "password is required";
     }
 
     if (emailError || passwordError) {
@@ -61,9 +60,9 @@ export default class Login extends Component {
     axios
       .post("/app/logincustomer", user)
       .then((res) => {
-        console.log(res.data.token, " toooooooooooooooooooken");
         window.localStorage.setItem("token", res.data.token);
         window.localStorage.setItem("email", user.email);
+        window.location = "/home";
       })
       .catch((err) => alert("wrong email or password"));
   }
@@ -106,11 +105,11 @@ export default class Login extends Component {
               <div style={{ color: "red" }}>{this.state.passwordError}</div>
               <br></br>
             </div>
-
             <input type="button" value="Login" onClick={this.handleClick} />
             <br></br>
-            <br></br>
-            <br></br>
+            <p>
+              Don't have an account <a href="signupC">sign up</a>
+            </p>
           </form>
         </div>
       </div>

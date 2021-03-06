@@ -39,16 +39,13 @@ export default class Signup extends Component {
     let emailError = "";
     let passwordError = "";
     if (!this.state.firstname) {
-      firstnameError = "First Name is required";
+      firstnameError = "first name is required";
     }
     if (!this.state.lastname) {
-      lastnameError = "Last Name is required";
+      lastnameError = "last name is required";
     }
     if (!this.state.email) {
-      emailError = "Email is required";
-    }
-    if (!this.state.email.includes("@")) {
-      emailError = "Invalid Email";
+      emailError = "email is required";
     }
 
     if (!this.state.username) {
@@ -56,7 +53,7 @@ export default class Signup extends Component {
     }
 
     if (!this.state.password) {
-      passwordError = "Password is required";
+      passwordError = "password is required";
     }
 
     if (
@@ -80,6 +77,7 @@ export default class Signup extends Component {
 
   handleSubmit = (event) => {
     const isValid = this.validate();
+    console.log(isValid, "isValid");
     if (isValid) {
       console.log(this.state);
     }
@@ -96,7 +94,7 @@ export default class Signup extends Component {
     axios
       .post("/app/addadmin", admin)
       .then((res) => {
-        // window.location = "/app/login";
+        window.location = "/loginA";
       })
       .catch((err) => alert("email already exists"));
   }
@@ -107,7 +105,9 @@ export default class Signup extends Component {
         <br />
         <div className="container text-center">
           <form className="text-center border border-light p-9">
-            <b>{/* sign up as a customer?<a href="/login"> sign up </a> */}</b>
+            <b>
+              sign up as a customer?<a href="/signupC"> sign up </a>
+            </b>
             <br />
             <div className="col">
               <label> First Name </label>
@@ -148,7 +148,7 @@ export default class Signup extends Component {
                 value={this.setState.username}
                 onChange={this.onChangeHandle}
                 name="username"
-                placeholder="username"
+                placeholder="username Number"
               />
               <div style={{ color: "red" }}>{this.state.usernameError}</div>
               <br></br>
@@ -188,7 +188,7 @@ export default class Signup extends Component {
             <br></br>
             <br></br>
             <b>
-              have an account?<a href="/login"> Login </a>
+              have an account?<a href="/loginA"> Login </a>
             </b>
             <br></br>
           </form>

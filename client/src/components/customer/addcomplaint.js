@@ -25,7 +25,6 @@ export default class AddComplaint extends Component {
   }
 
   onChangeHandle(event) {
-    console.log(event.target.name);
     this.setState({ [event.target.name]: event.target.value });
   }
 
@@ -66,10 +65,8 @@ export default class AddComplaint extends Component {
     e.preventDefault();
 
     let token = localStorage.getItem("token");
-    console.log(token, "token");
     var decoded = jwt_decode(token);
     let customerId = decoded._id;
-    console.log(decoded, "decoded");
 
     const complaint = {
       title: this.state.title,
@@ -79,7 +76,6 @@ export default class AddComplaint extends Component {
       status: this.state.status,
       //   image: this.state.url,
     };
-    console.log(complaint);
     axios
       .post("/app/addcomplaint", complaint)
       .then((res) => console.log(res.data));

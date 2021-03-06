@@ -28,9 +28,7 @@ class ComplaintsList extends Component {
     axios
       .get("/app/fetchcomplaints")
       .then((res) => {
-        console.log(res, "resres");
         this.setState({ complaints: res.data });
-        console.log(this.state.complaints, "hayniiii");
       })
       .catch((error) => {
         console.log(error);

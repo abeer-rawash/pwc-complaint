@@ -76,16 +76,13 @@ class ComplaintsList extends Component {
   }
   componentDidMount() {
     let token = localStorage.getItem("token");
-    console.log(token, "token");
     var decoded = jwt_decode(token);
     let customerId = decoded._id;
 
     axios
       .get("/app/fetchcomplaints/" + customerId)
       .then((res) => {
-        console.log(res, "resres");
         this.setState({ complaints: res.data });
-        console.log(this.state.complaints, "hayniiii");
       })
       .catch((error) => {
         console.log(error);
@@ -102,15 +99,20 @@ class ComplaintsList extends Component {
   }
 
   ComplaintsList() {
-    return this.state.complaints.map((currentComplaint) => {
-      return (
-        <Complaints
-          complaint={currentComplaint}
-          deleteComplaint={this.deleteComplaint}
-          key={currentComplaint._id}
-        />
-      );
-    });
+    let token = localStorage.getItem("token");
+    var decoded = jwt_decode(token);
+    let customerIds = decoded._id;
+    return this.state.complaints
+      .filter((complaint) => complaint.customerId._id == customerIds)
+      .map((currentComplaint) => {
+        return (
+          <Complaints
+            complaint={currentComplaint}
+            deleteComplaint={this.deleteComplaint}
+            key={currentComplaint._id}
+          />
+        );
+      });
   }
 
   render() {

@@ -11,15 +11,26 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   return (
     <Router className="container">
-      <div className="App">
-        {/* <SignupA />
-        <LoginA />
-        <AllComplaints /> */}
-        <SignupC />
-        <LoginC />
-        <Home />
-        <AddComplaint />
-        <ComplaintsList />
+      <div>
+        <Route path="/signupC" component={SignupC} />
+        <Route path="/signupA" component={SignupA} />
+        <Route path="/loginA" component={LoginA} />
+        <Route path="/loginC" component={LoginC} />
+        <Route path="/home" component={Home} />
+        <Route path="/addcomp" component={AddComplaint} />
+        {/* <ProtectedRoute
+          path="/ItemsList"
+          component={ItemsList}
+          isAuth={localStorage.length > 0}
+        />
+        <ProtectedRoute
+          path="/addItems"
+          component={AddItems}
+          isAuth={localStorage.length > 0}
+        />
+        <Route path="/addUser" component={Signup} />
+        <Route path="/login" component={Login} />
+        <Route path="/edit/:id" component={EditItems} /> */}
       </div>
     </Router>
   );

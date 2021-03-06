@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Redirect } from "react-router";
 
 export default class Login extends Component {
   constructor(props) {
@@ -17,7 +18,6 @@ export default class Login extends Component {
   }
 
   onChangeHandle(event) {
-    console.log(event.target.name);
     this.setState({ [event.target.name]: event.target.value });
   }
 
@@ -61,7 +61,6 @@ export default class Login extends Component {
     axios
       .post("/app/loginadmin", user)
       .then((res) => {
-        console.log(res.data.token, " toooooooooooooooooooken");
         window.localStorage.setItem("token", res.data.token);
         window.localStorage.setItem("email", user.email);
       })
@@ -111,6 +110,9 @@ export default class Login extends Component {
             <br></br>
             <br></br>
             <br></br>
+            <p>
+              Don't have an account <a href="signupA">sign up</a>
+            </p>
           </form>
         </div>
       </div>
