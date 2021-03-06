@@ -18,6 +18,7 @@ function App() {
         <Route path="/loginC" component={LoginC} />
         <Route path="/home" component={Home} />
         <Route path="/addcomp" component={AddComplaint} />
+        <Route path="/complaintsId" component={ComplaintsList} />
         {/* <ProtectedRoute
           path="/ItemsList"
           component={ItemsList}

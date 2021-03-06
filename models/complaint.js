@@ -22,8 +22,9 @@ const Complaint = new mongoose.Schema(
       type: String,
       required: true,
     },
-    url: {
+    complaintStatus: {
       type: String,
+      required: true,
     },
   },
   { timestamps: true }

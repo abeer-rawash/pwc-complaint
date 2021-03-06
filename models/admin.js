@@ -3,23 +3,23 @@ const mongoose = require("mongoose");
 const Admin = new mongoose.Schema({
   firstName: {
     type: String,
-    required: [true, "First Name Is Required"],
+    required: true,
   },
   lastName: {
     type: String,
-    required: [true, "Last Name Is Required"],
+    required: true,
   },
   username: {
     type: String,
-    required: [true, "Username Is Required"],
+    required: true,
   },
   email: {
     type: String,
-    required: [true, "Email Is Required"],
+    required: true,
   },
   password: {
     type: String,
-    required: [true, "Password Is Required"],
+    required: true,
   },
 });
 

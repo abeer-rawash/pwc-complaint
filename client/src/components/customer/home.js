@@ -8,7 +8,7 @@ function Home() {
         give us a complaint <span>to give you a satisfaction</span>
       </p>
       <button>
-        <a href="addcomp">Add a Complaint</a>
+        <a href="addcomp">Add Complaint</a>
       </button>
     </div>
   );

@@ -7,59 +7,21 @@ import jwt_decode from "jwt-decode";
 export default class AddComplaint extends Component {
   constructor(props) {
     super(props);
-    //Defining the "this" in the functions using .bind method
 
     this.onSubmit = this.onSubmit.bind(this);
     this.onChangeHandle = this.onChangeHandle.bind(this);
-    // this.onChangeimg = this.onChangeimg.bind(this);
-    // this.handleUpload = this.handleUpload.bind(this);
 
     this.state = {
       title: "",
       type: "",
       description: "",
       status: "Pending",
-      //   image: null,
-      //   url: "",
     };
   }
 
   onChangeHandle(event) {
     this.setState({ [event.target.name]: event.target.value });
   }
-
-  //   onChangeimg(e) {
-  //     if (e.target.files[0]) {
-  //       this.setState({
-  //         image: e.target.files[0],
-  //       });
-  //     } else console.log("error in onchangeimg");
-  //   }
-
-  //   handleUpload(e) {
-  //     e.preventDefault();
-  //     const uploadTask = storage
-  //       .ref(`/images/${this.state.image.name}`)
-  //       .put(this.state.image);
-  //     uploadTask.on(
-  //       "state_changed",
-  //       (snapshot) => {},
-  //       (error) => {
-  //         console.log(error, "error");
-  //       },
-  //       () => {
-  //         storage
-  //           .ref("images")
-  //           .child(this.state.image.name)
-  //           .getDownloadURL()
-  //           .then((url) => {
-  //             this.setState({
-  //               url: url,
-  //             });
-  //           });
-  //       }
-  //     );
-  //   }
 
   onSubmit(e) {
     e.preventDefault();
@@ -74,12 +36,13 @@ export default class AddComplaint extends Component {
       type: this.state.type,
       description: this.state.description,
       status: this.state.status,
-      //   image: this.state.url,
     };
     axios
       .post("/app/addcomplaint", complaint)
       .then((res) => console.log(res.data));
-    // window.location = "/ItemsList";
+    if (complaint.title || complaint.type || complaint.description) {
+      window.location = "/complaintsId";
+    } else alert("please fill all fields");
   }
   render() {
     return (
@@ -133,26 +96,6 @@ export default class AddComplaint extends Component {
               />
             </div>
             <br />
-
-            {/* <div className="col">
-              <label>Add Image</label>
-              <input
-                type="file"
-                required="true"
-                className="form-control"
-                onChange={this.onChangeimg}
-              />
-              <button onClick={this.handleUpload}>Upload</button>
-              <br />
-              <img
-                src={this.state.url || "http://via.placeholder.com/100x150"}
-                alt="firebase-image"
-                width="200px"
-                height="200px"
-              />
-            </div>
-            <br />
-            <div> */}
             <button
               type="submit"
               className="btn btn-deep-orange darken-4"
@@ -160,7 +103,6 @@ export default class AddComplaint extends Component {
             >
               Submit
             </button>
-            {/* </div> */}
           </form>
         </div>
       </div>

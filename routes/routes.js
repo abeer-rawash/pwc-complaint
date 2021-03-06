@@ -71,13 +71,13 @@ router.post("/addcomplaint", async (req, res) => {
   const description = req.body.description;
   const status = req.body.status;
 
-  //Adding a new customer
+  //Adding a new complaint
   const newComplaint = await Complaint.create({
     complaintTitle: title,
     complaintType: type,
     customerId: customerId,
-    complaintMsg: description,
     complaintStatus: status,
+    complaintMsg: description,
   });
   try {
     const saveComplaint = await newComplaint.save();
@@ -92,6 +92,7 @@ router.get("/fetchcomplaints/:id", async function (req, res) {
   await Complaint.find()
     .populate("customerId")
     .exec((err, complaints) => {
+      console.log(complaints, "sssssssssssssssssssss");
       if (err) return res.status(400).send(err);
       res.status(200).send(complaints);
     });
