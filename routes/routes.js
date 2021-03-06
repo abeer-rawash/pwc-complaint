@@ -92,7 +92,6 @@ router.get("/fetchcomplaints/:id", async function (req, res) {
   await Complaint.find()
     .populate("customerId")
     .exec((err, complaints) => {
-      console.log(complaints, "sssssssssssssssssssss");
       if (err) return res.status(400).send(err);
       res.status(200).send(complaints);
     });
@@ -161,6 +160,30 @@ router.get("/fetchcomplaints", async function (req, res) {
     .exec((err, complaints) => {
       if (err) return res.status(400).send(err);
       res.status(200).send(complaints);
+    });
+});
+
+//GET complaint by id
+router.get("/addcomplaint/:id", function (req, res) {
+  Complaint.findById(req.params.id, function (err, complaint) {
+    if (!complaint) {
+      res.status(404).send("No result found");
+    } else {
+      res.json(complaint);
+    }
+  });
+});
+
+//Update status in a complaint
+router.patch("/addcomplaint/update/:id", function (req, res) {
+  console.log("HELLLOOOO");
+  Complaint.findByIdAndUpdate(req.params.id, req.body)
+    .then(function () {
+      res.json("Complaint updated");
+    })
+    .catch(function (err) {
+      console.log("yessss");
+      res.status(422).send("Complaint update failed");
     });
 });
 

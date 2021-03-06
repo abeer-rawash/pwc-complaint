@@ -63,6 +63,7 @@ export default class Login extends Component {
       .then((res) => {
         window.localStorage.setItem("token", res.data.token);
         window.localStorage.setItem("email", user.email);
+        window.location = "/complaints";
       })
       .catch((err) => alert("wrong email or password"));
   }

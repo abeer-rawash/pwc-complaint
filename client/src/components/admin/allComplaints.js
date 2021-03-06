@@ -11,6 +11,19 @@ const Complaints = (props) => (
     <td>{props.complaint.complaintType}</td>
     <td>{props.complaint.complaintMsg}</td>
     <td>{props.complaint.complaintStatus}</td>
+    <td>
+      <button
+        style={{ width: 120, height: 40 }}
+        type="button"
+        className="btn btn-deep-orange darken-4"
+        onClick={() => {
+          console.log(props.complaint._id, "onclick");
+          window.location.href = "/edit/" + props.complaint._id;
+        }}
+      >
+        Edit
+      </button>
+    </td>
   </tr>
 );
 
@@ -20,7 +33,6 @@ class ComplaintsList extends Component {
     this.state = {
       complaints: [],
       filteredComplaints: [],
-      SearchString: "",
       type: "",
     };
   }
@@ -36,41 +48,39 @@ class ComplaintsList extends Component {
   }
 
   ComplaintsList() {
-    // let listedComplaints =
-    //   this.state.filteredComplaints.length > 0
-    //     ? this.state.filteredComplaints
-    //     : this.state.complaints;
+    let listedComplaints =
+      this.state.filteredComplaints.length > 0
+        ? this.state.filteredComplaints
+        : this.state.complaints;
 
-    return this.state.complaints.map((currentComplaint) => {
+    return listedComplaints.map((currentComplaint) => {
       return (
         <Complaints complaint={currentComplaint} key={currentComplaint._id} />
       );
     });
   }
 
-  // onChangetype(e) {
-  //   let { filteredComplaints } = this.state;
-  //   let string = e.target.value;
-  //   this.setState({
-  //     type: e.target.value,
-  //   });
-  //   console.log(filteredComplaints, "filteredComplaints");
-  //   filteredComplaints = filteredComplaints.filter((complaint) =>
-  //     complaint.type.includes(string)
-  //   );
-  //   this.setState({ filteredComplaints: filteredComplaints });
-  // }
+  onChangetype(e) {
+    let { filteredComplaints } = this.state;
+    let string = e.target.value;
+    this.setState({
+      type: e.target.value,
+    });
+    filteredComplaints = this.state.complaints.filter((complaint) =>
+      complaint.complaintType.includes(string)
+    );
+    this.setState({ filteredComplaints: filteredComplaints });
+  }
 
   render() {
     return (
       <div>
         <br />
         <div className="container text-center border border-light p-9">
-          <h2>Clothing</h2>
           <Form>
             <Form.Group
               controlId="exampleForm.SelectCustomSizeSm"
-              // onChange={this.onChangetype.bind(this)}
+              onChange={this.onChangetype.bind(this)}
             >
               <Form.Control
                 as="select"
@@ -100,7 +110,6 @@ class ComplaintsList extends Component {
                 <th>Title</th>
                 <th>Type</th>
                 <th>Description</th>
-                {/* <th>Image</th> */}
                 <th>Status</th>
               </tr>
             </thead>

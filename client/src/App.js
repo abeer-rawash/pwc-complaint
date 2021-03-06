@@ -6,6 +6,7 @@ import ComplaintsList from "./components/customer/complaints";
 import SignupA from "./components/admin/signup";
 import LoginA from "./components/admin/login";
 import AllComplaints from "./components/admin/allComplaints";
+import EditComplaint from "./components/admin/editComplaint";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
@@ -13,12 +14,14 @@ function App() {
     <Router className="container">
       <div>
         <Route path="/signupC" component={SignupC} />
-        <Route path="/signupA" component={SignupA} />
-        <Route path="/loginA" component={LoginA} />
         <Route path="/loginC" component={LoginC} />
         <Route path="/home" component={Home} />
         <Route path="/addcomp" component={AddComplaint} />
         <Route path="/complaintsId" component={ComplaintsList} />
+        <Route path="/signupA" component={SignupA} />
+        <Route path="/loginA" component={LoginA} />
+        <Route path="/complaints" component={AllComplaints} />
+        <Route path="/edit/:id" component={EditComplaint} />
         {/* <ProtectedRoute
           path="/ItemsList"
           component={ItemsList}
@@ -31,7 +34,7 @@ function App() {
         />
         <Route path="/addUser" component={Signup} />
         <Route path="/login" component={Login} />
-        <Route path="/edit/:id" component={EditItems} /> */}
+        */}
       </div>
     </Router>
   );
