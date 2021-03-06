@@ -156,4 +156,15 @@ router.post("/loginadmin", async (req, res) => {
   res.header("addUser-token", token).json({ token });
 });
 
+//GET all complaints
+router.get("/fetchcomplaints", async function (req, res) {
+  await Complaint.find()
+    .populate("customerId")
+    .exec((err, complaints) => {
+      console.log(complaints, "complaints r coming from db");
+      if (err) return res.status(400).send(err);
+      res.status(200).send(complaints);
+    });
+});
+
 module.exports = router;

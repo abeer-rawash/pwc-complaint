@@ -95,7 +95,7 @@ export default class AddComplaint extends Component {
             <div className="col">
               <label>Title</label>
               <input
-                required="true"
+                required={true}
                 type="text"
                 className="form-control"
                 name="title"
@@ -110,12 +110,13 @@ export default class AddComplaint extends Component {
               <label>Select type</label>
               <select
                 ref="userInput"
-                required="true"
+                required={true}
                 className="form-control"
                 name="type"
                 value={this.setState.type}
                 onChange={this.onChangeHandle}
               >
+                <option value="">Select</option>
                 <option value="Quality">Quality</option>
                 <option value="Delay">Delay</option>
                 <option value="Services">Services</option>
@@ -127,7 +128,7 @@ export default class AddComplaint extends Component {
               <label>Description </label>
               <textarea
                 type="text"
-                required="true"
+                required={true}
                 className="form-control"
                 name="description"
                 value={this.setState.description}
