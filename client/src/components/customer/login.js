@@ -61,7 +61,9 @@ export default class Login extends Component {
     axios
       .post("/app/logincustomer", user)
       .then((res) => {
-        console.log(res);
+        console.log(res.data.token, " toooooooooooooooooooken");
+        window.localStorage.setItem("token", res.data.token);
+        window.localStorage.setItem("email", user.email);
       })
       .catch((err) => alert("wrong email or password"));
   }

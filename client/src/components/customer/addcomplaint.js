@@ -18,6 +18,7 @@ export default class AddComplaint extends Component {
       title: "",
       type: "",
       description: "",
+      status: "Pending",
       //   image: null,
       //   url: "",
     };
@@ -75,6 +76,7 @@ export default class AddComplaint extends Component {
       customerId: customerId,
       type: this.state.type,
       description: this.state.description,
+      status: this.state.status,
       //   image: this.state.url,
     };
     console.log(complaint);

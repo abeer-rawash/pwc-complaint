@@ -12,6 +12,9 @@ const Complaint = new mongoose.Schema(
     complaintType: {
       type: String,
     },
+    complaintStatus: {
+      type: String,
+    },
     complaintTitle: {
       type: String,
     },
