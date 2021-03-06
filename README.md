@@ -11,6 +11,7 @@ Complaints
 ​
 
 1. [Usage](#Usage)
+1. [Documents](#documents)
 1. [Technologies](#technologies)
    1. [Installing Dependencies](#installing-dependencies)
    1. [Tasks](#tasks)
@@ -33,7 +34,12 @@ Users 1: Customers
 - mongoDB
 - bootstrap
 - bcrypt - Token
-  ​
+
+## Documents
+
+![alt text](https://github.com/abeer-rawash/pwc-complaint/blob/master/imgs/doc.png)
+![alt text](https://github.com/abeer-rawash/pwc-complaint/blob/master/imgs/doc1.png)
+​
 
 ### Installing Dependencies
 
