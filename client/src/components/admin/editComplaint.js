@@ -40,7 +40,7 @@ export default class EditComplaint extends Component {
     e.preventDefault();
 
     const complaint = {
-      status: this.state.status,
+      complaintStatus: this.state.status,
     };
     console.log(complaint);
 

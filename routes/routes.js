@@ -176,9 +176,9 @@ router.get("/addcomplaint/:id", function (req, res) {
 
 //Update status in a complaint
 router.patch("/addcomplaint/update/:id", function (req, res) {
-  console.log("HELLLOOOO");
   Complaint.findByIdAndUpdate(req.params.id, req.body)
     .then(function () {
+      console.log("req.body", req.body);
       res.json("Complaint updated");
     })
     .catch(function (err) {
