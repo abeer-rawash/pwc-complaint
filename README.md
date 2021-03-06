@@ -37,8 +37,7 @@ Users 1: Customers
 
 ## Documents
 
-![alt text](https://github.com/abeer-rawash/pwc-complaint/blob/master/imgs/doc.png)
-![alt text](https://github.com/abeer-rawash/pwc-complaint/blob/master/imgs/doc1.png)
+![alt text](https://github.com/abeer-rawash/pwc-complaint/blob/master/imgs/DBdiagram.png)
 ​
 
 ### Installing Dependencies

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import axios from "axios";
-// import Footer from "./Footer";
+import Navbar from "./nav";
 // import { Form, DropdownButton } from "react-bootstrap";
 const Complaints = (props) => (
   <tr>
@@ -53,9 +53,9 @@ class ComplaintsList extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <br />
         <div className="container text-center border border-light p-9">
-          <h2>Your Complaints List</h2>
           <table className="table">
             <thead className="thead">
               <tr>
@@ -69,10 +69,28 @@ class ComplaintsList extends Component {
             <tbody>{this.ComplaintsList()}</tbody>
           </table>
         </div>
-        <button>
-          <a href="addcomp">Add Complaint</a>
+        <button
+          style={{
+            width: "200px",
+            height: "60px",
+            borderRadius: "10px",
+            marginTop: "10px",
+            background: "#5083AD",
+            marginLeft: "1215px",
+            fontWeight: "bold",
+            fontSize: "20px",
+          }}
+        >
+          <a
+            style={{
+              textDecoration: "none",
+              color: "#D6D6D6",
+            }}
+            href="/addcomp"
+          >
+            Add Complaint
+          </a>
         </button>
-        {/* <Footer /> */}
       </div>
     );
   }

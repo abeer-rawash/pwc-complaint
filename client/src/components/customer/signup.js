@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Form } from "react-bootstrap";
 
 export default class Signup extends Component {
   constructor(props) {
@@ -104,98 +105,201 @@ export default class Signup extends Component {
 
   render() {
     return (
-      <div>
-        <br />
-        <div className="container text-center">
-          <form className="text-center border border-light p-9">
-            <b>
-              sign up as an Admin?<a href="/signupA"> sign up </a>
-            </b>
-            <br />
-            <div className="col">
-              <label> First Name </label>
-              <br></br>
-              <input
-                required={true}
-                type="text"
-                className="form-control col"
-                name="firstname"
-                value={this.setState.firstname}
-                onChange={this.onChangeHandle}
-                placeholder="First Name"
-              />
-              <div style={{ color: "red" }}>{this.state.firstnameError}</div>
-              <br></br>
-            </div>
-            <div className="col">
-              <label> Last Name </label>
-              <br></br>
-              <input
-                required={true}
-                type="text"
-                className="form-control col"
-                name="lastname"
-                value={this.setState.lastname}
-                onChange={this.onChangeHandle}
-                placeholder="Last Name"
-              />
-              <div style={{ color: "red" }}>{this.state.lastnameError}</div>
-              <br></br>
-            </div>
-            <div className="col">
-              <label> Phone No. </label>
-              <br></br>
-              <input
-                required={true}
-                className="form-control col"
-                value={this.setState.phone}
-                onChange={this.onChangeHandle}
-                name="phone"
-                placeholder="Phone Number"
-              />
-              <div style={{ color: "red" }}>{this.state.phoneError}</div>
-              <br></br>
-            </div>
-            <div className="col">
-              <label> E-mail </label>
-              <br></br>
-              <input
-                required={true}
-                type="text"
-                className="form-control col"
-                name="email"
-                value={this.setState.email}
-                onChange={this.onChangeHandle}
-                placeholder="E-mail"
-              />
-              <div style={{ color: "red" }}>{this.state.emailError}</div>
-              <br></br>
-            </div>
-            <div className="col">
-              <label> Password </label>
-              <br></br>
-              <input
-                required={true}
-                type="password"
-                className="form-control col"
-                name="password"
-                value={this.setState.password}
-                onChange={this.onChangeHandle}
-                placeholder="Password"
-              />
-              <div style={{ color: "red" }}>{this.state.passwordError}</div>
-              <br></br>
-            </div>
+      <div
+        style={{
+          width: "500px",
+          height: "650px",
+          border: "2px solid #4682B4E6",
+          padding: "30px 30px 30px 30px",
+          margin: "2% 0% 0% 35%",
 
-            <input type="button" value="Sign up" onClick={this.handleClick} />
+          borderRadius: "10px",
+        }}
+      >
+        <b
+          style={{
+            marginLeft: "100px",
+            paddingBottom: "30px",
+            color: "#4682B4",
+          }}
+        >
+          sign up as an Admin?
+          <a
+            style={{
+              textDecoration: "none",
+              color: "#26468A",
+            }}
+            href="/signupA"
+          >
+            {" "}
+            sign up{" "}
+          </a>{" "}
+        </b>
+        <Form>
+          <Form.Group controlId="formBasicEmail">
+            <label
+              style={{
+                fontSize: "20px",
+                paddingBottom: "5px",
+              }}
+            >
+              First Name
+            </label>
+            <input
+              required={true}
+              name="firstname"
+              value={this.setState.firstname}
+              onChange={this.onChangeHandle}
+              type="text"
+              class="form-control"
+              style={{
+                height: "40px",
+              }}
+              placeholder="Enter First Name"
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+            <div style={{ color: "red", fontSize: "15px" }}>
+              {this.state.firstnameError}
+            </div>
             <br></br>
+          </Form.Group>
+
+          <Form.Group controlId="formBasicEmail">
+            <label
+              style={{
+                fontSize: "20px",
+                paddingBottom: "5px",
+              }}
+            >
+              Last Name
+            </label>
+            <input
+              required={true}
+              className="form-control col"
+              name="lastname"
+              value={this.setState.lastname}
+              onChange={this.onChangeHandle}
+              placeholder="Enter Last Name"
+              type="text"
+              class="form-control"
+              style={{
+                height: "40px",
+              }}
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+            <div style={{ color: "red", fontSize: "15px" }}>
+              {this.state.lastnameError}
+            </div>
             <br></br>
-            <b>
-              have an account?<a href="/loginC"> Login </a>
-            </b>
+          </Form.Group>
+
+          <Form.Group controlId="formBasicEmail">
+            <label
+              style={{
+                fontSize: "20px",
+                paddingBottom: "5px",
+              }}
+            >
+              Phone No.
+            </label>
+            <input
+              value={this.setState.phone}
+              onChange={this.onChangeHandle}
+              name="phone"
+              placeholder="Enter Phone No."
+              required={true}
+              className="form-control col"
+              onChange={this.onChangeHandle}
+              type="text"
+              class="form-control"
+              style={{
+                height: "40px",
+              }}
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+            <div style={{ color: "red", fontSize: "15px" }}>
+              {this.state.phoneError}
+            </div>
             <br></br>
-          </form>
-        </div>
+          </Form.Group>
+
+          <Form.Group controlId="formBasicEmail">
+            <label
+              style={{
+                fontSize: "20px",
+                paddingBottom: "5px",
+              }}
+            >
+              E-mail
+            </label>
+            <input
+              required={true}
+              className="form-control col"
+              name="email"
+              value={this.setState.email}
+              onChange={this.onChangeHandle}
+              placeholder="Enter E-mail"
+              type="text"
+              class="form-control"
+              style={{
+                height: "40px",
+              }}
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+            <div style={{ color: "red", fontSize: "15px" }}>
+              {this.state.emailError}
+            </div>
+          </Form.Group>
+
+          <Form.Group controlId="formBasicPassword">
+            <label
+              style={{
+                fontSize: "20px",
+                paddingBottom: "5px",
+                paddingTop: "20px",
+              }}
+            >
+              Password
+            </label>
+            <input
+              required={true}
+              type="password"
+              className="form-control col"
+              name="password"
+              value={this.setState.password}
+              onChange={this.onChangeHandle}
+              placeholder=" Enter Password"
+              class="form-control"
+              style={{
+                height: "40px",
+              }}
+              aria-label="Recipient's username"
+              aria-describedby="basic-addon2"
+            />
+            <div style={{ color: "red", fontSize: "15px" }}>
+              {this.state.passwordError}
+            </div>
+          </Form.Group>
+          <input
+            style={{
+              width: "100px",
+              height: "40px",
+              borderRadius: "10px",
+              marginTop: "40px",
+              marginLeft: "170px",
+              color: "white",
+              background: "#26468A",
+              fontWeight: "bold",
+            }}
+            type="button"
+            value="Sign up"
+            onClick={this.handleClick}
+          />
+        </Form>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Navbar from "./nav";
 
 export default class EditComplaint extends Component {
   constructor(props) {
@@ -55,61 +56,72 @@ export default class EditComplaint extends Component {
 
   render() {
     return (
-      <div className="container">
-        <form
-          className="text-center border border-light p-5"
-          action="#!"
-          onSubmit={this.onSubmit}
+      <div>
+        <Navbar />
+        <div
+          style={{
+            marginTop: "100px",
+            border: "2px solid",
+            height: "400px",
+            width: "600px",
+          }}
+          className="container"
         >
-          <p className="h4 mb-4">Edit Complaint Status</p>
-          <div className="type">
-            <label>Select Type </label>
-            <select
-              ref="userInput"
-              required
-              className="form-control"
-              value={this.state.type}
-              onChange={this.onChangeStatus}
+          <form
+            style={{
+              padding: "40px",
+              marginTop: "30px",
+            }}
+            // className=" border border-red p-5"
+            action="#!"
+            onSubmit={this.onSubmit}
+          >
+            <p
+              style={{
+                textAlign: "center",
+              }}
+              className="h4 mb-4"
             >
-              <option value="Pending">Pending</option>
-              <option value="Dismissed">Dismissed</option>
-              <option value="Resolved">Resolved</option>
-            </select>
-          </div>
-          <br />
+              Edit Complaint Status
+            </p>
+            <div className="type">
+              <select
+                style={{
+                  width: "500px",
+                  marginTop: "40px",
+                  height: "50px",
+                }}
+                ref="userInput"
+                required
+                className="form-control"
+                value={this.state.type}
+                onChange={this.onChangeStatus}
+              >
+                Select Type
+                <option value="">Select Type</option>
+                <option value="Pending">Pending</option>
+                <option value="Dismissed">Dismissed</option>
+                <option value="Resolved">Resolved</option>
+              </select>
+            </div>
+            <br />
 
-          {/* <div className="col">
-            <label>Description </label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.description}
-              onChange={this.onChangeDescription}
-              placeholder="Please insert a detailed description of your item and add its current condition"
-            />
-          </div>
-
-          <br />
-
-          <div className="col">
-            <label>Donor Phone Number </label>
-            <input
-              type="text"
-              className="form-control"
-              value={this.state.phoneNumber}
-              onChange={this.onChangeStatus}
-              placeholder="Please insert your phone number"
-            />
-          </div>
-
-          <br /> */}
-
-          <div>
-            <button type="submit" value="Submit" className="btn btn-dark">
-              Save
-            </button>
-          </div>
-        </form>
+            <div>
+              <button
+                style={{
+                  marginLeft: "200px",
+                  marginTop: "40px",
+                  width: "100px",
+                }}
+                type="submit"
+                value="Submit"
+                className="btn btn-dark"
+              >
+                Save
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

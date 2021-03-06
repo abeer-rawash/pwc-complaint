@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { links, withRouter } from "react-router-dom";
 import axios from "axios";
+import Navbar from "./nav";
 // import Footer from "./Footer";
 import { Form, DropdownButton } from "react-bootstrap";
 const Complaints = (props) => (
@@ -13,7 +14,7 @@ const Complaints = (props) => (
     <td>{props.complaint.complaintStatus}</td>
     <td>
       <button
-        style={{ width: 120, height: 40 }}
+        style={{ width: 120, height: 40, background: "yellow" }}
         type="button"
         className="btn btn-deep-orange darken-4"
         onClick={() => {
@@ -75,6 +76,7 @@ class ComplaintsList extends Component {
   render() {
     return (
       <div>
+        <Navbar />
         <br />
         <div className="container text-center border border-light p-9">
           <Form>
@@ -89,8 +91,10 @@ class ComplaintsList extends Component {
                 style={{
                   width: 155,
                   color: "white",
-                  border: "orange",
-                  margin: "50px 0px 10px 250px",
+                  borderRadius: "5px",
+                  height: "40px",
+                  padding: "6px",
+                  marginLeft: "1100px",
                   background: "#212121",
                 }}
               >
