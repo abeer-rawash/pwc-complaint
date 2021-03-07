@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 const routesUrls = require("./routes/routes");
 const cors = require("cors");
+const path = require("path");
 
 //connecting to mongoDB
 mongoose.connect(process.env.MONGODB_URI, {
