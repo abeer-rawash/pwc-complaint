@@ -41,7 +41,7 @@ class ComplaintsList extends Component {
     let customerIds = decoded._id;
     console.log(this.state.complaints, "pleaseeeeeee");
     return this.state.complaints
-      .filter((complaint) => complaint.customerId._id == customerIds)
+      .filter((complaint) => complaint.customerId._id === customerIds)
       .map((currentComplaint) => {
         return (
           <Complaints complaint={currentComplaint} key={currentComplaint._id} />

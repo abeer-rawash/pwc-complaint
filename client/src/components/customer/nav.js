@@ -2,12 +2,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 export default class Navbar extends Component {
   render() {
-    var value = false;
-    if (window.localStorage.length > 0) {
-      value = true;
-    } else {
-      value = false;
-    }
     return (
       <div>
         <nav

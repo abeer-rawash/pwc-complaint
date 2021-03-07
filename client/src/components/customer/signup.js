@@ -211,7 +211,6 @@ export default class Signup extends Component {
               placeholder="Enter Phone No."
               required={true}
               className="form-control col"
-              onChange={this.onChangeHandle}
               type="text"
               class="form-control"
               style={{

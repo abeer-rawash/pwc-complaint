@@ -203,7 +203,6 @@ export default class Signup extends Component {
             </label>
             <input
               value={this.setState.username}
-              onChange={this.onChangeHandle}
               name="username"
               placeholder="Enter Username"
               required={true}

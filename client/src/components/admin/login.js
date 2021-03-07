@@ -164,7 +164,6 @@ export default class Login extends Component {
             Don't have an account?{" "}
             <a
               style={{
-                color: "",
                 textDecoration: "none",
                 color: " #4f6633",
               }}

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { links, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import axios from "axios";
 import Navbar from "./nav";
-import { Form, DropdownButton } from "react-bootstrap";
+import { Form } from "react-bootstrap";
 const Complaints = (props) => (
   <tr>
     <td>{props.complaint.date}</td>

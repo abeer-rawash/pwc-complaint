@@ -92,7 +92,6 @@ export default class Login extends Component {
             </label>
             <input
               required={true}
-              required={true}
               className="form-control col"
               name="email"
               value={this.setState.email}
@@ -165,7 +164,6 @@ export default class Login extends Component {
             Don't have an account?{" "}
             <a
               style={{
-                color: "",
                 textDecoration: "none",
                 color: "#26468A",
               }}
