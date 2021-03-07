@@ -98,7 +98,6 @@ export default class Login extends Component {
               onChange={this.onChangeHandle}
               placeholder="Enter E-mail"
               type="text"
-              class="form-control"
               style={{
                 height: "40px",
               }}
@@ -128,7 +127,6 @@ export default class Login extends Component {
               value={this.setState.password}
               onChange={this.onChangeHandle}
               placeholder=" Enter Password"
-              class="form-control"
               style={{
                 height: "40px",
               }}

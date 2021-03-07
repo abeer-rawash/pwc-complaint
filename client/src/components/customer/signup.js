@@ -151,7 +151,7 @@ export default class Signup extends Component {
               value={this.setState.firstname}
               onChange={this.onChangeHandle}
               type="text"
-              class="form-control"
+              className="form-control"
               style={{
                 height: "40px",
               }}
@@ -182,7 +182,6 @@ export default class Signup extends Component {
               onChange={this.onChangeHandle}
               placeholder="Enter Last Name"
               type="text"
-              class="form-control"
               style={{
                 height: "40px",
               }}
@@ -210,9 +209,8 @@ export default class Signup extends Component {
               name="phone"
               placeholder="Enter Phone No."
               required={true}
-              className="form-control col"
               type="text"
-              class="form-control"
+              className="form-control"
               style={{
                 height: "40px",
               }}
@@ -242,7 +240,6 @@ export default class Signup extends Component {
               onChange={this.onChangeHandle}
               placeholder="Enter E-mail"
               type="text"
-              class="form-control"
               style={{
                 height: "40px",
               }}
@@ -272,7 +269,6 @@ export default class Signup extends Component {
               value={this.setState.password}
               onChange={this.onChangeHandle}
               placeholder=" Enter Password"
-              class="form-control"
               style={{
                 height: "40px",
               }}
