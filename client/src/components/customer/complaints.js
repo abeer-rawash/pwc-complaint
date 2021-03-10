@@ -39,7 +39,6 @@ class ComplaintsList extends Component {
     let token = localStorage.getItem("token");
     var decoded = jwt_decode(token);
     let customerIds = decoded._id;
-    console.log(this.state.complaints, "pleaseeeeeee");
     return this.state.complaints
       .filter((complaint) => complaint.customerId._id === customerIds)
       .map((currentComplaint) => {

@@ -81,7 +81,6 @@ export default class Signup extends Component {
 
   handleSubmit = (event) => {
     const isValid = this.validate();
-    console.log(isValid, "isValid");
     if (isValid) {
       console.log(this.state);
     }
