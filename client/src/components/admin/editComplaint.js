@@ -15,11 +15,9 @@ export default class EditComplaint extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match.params.id, "this.props.match.params.id");
     axios
       .get("/app/addcomplaint/" + this.props.match.params.id)
       .then((response) => {
-        console.log(response.data.complaintStatus, "responsee");
         this.setState({
           status: response.data.complaintStatus,
         });
@@ -30,7 +28,6 @@ export default class EditComplaint extends Component {
   }
 
   onChangeStatus(e) {
-    console.log(e.target.value, "e.target.value");
     this.setState({
       status: e.target.value,
     });
@@ -42,7 +39,6 @@ export default class EditComplaint extends Component {
     const complaint = {
       complaintStatus: this.state.status,
     };
-    console.log(complaint);
 
     axios
       .patch(

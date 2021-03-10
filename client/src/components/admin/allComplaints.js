@@ -24,7 +24,6 @@ const Complaints = (props) => (
         type="button"
         className="btn btn-deep-orange darken-4"
         onClick={() => {
-          console.log(props.complaint._id, "onclick");
           window.location.href = "/edit/" + props.complaint._id;
         }}
       >

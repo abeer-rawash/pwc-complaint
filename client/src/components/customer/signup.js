@@ -52,9 +52,9 @@ export default class Signup extends Component {
     if (!this.state.phone) {
       phoneError = "phone number is required";
     }
-    if (this.state.phone.match(/\D/g) || this.state.phone.length < 10) {
-      phoneError = "invalid phone Number";
-    }
+    // if (this.state.phone.match(/\D/g) || this.state.phone.length < 10) {
+    //   phoneError = "invalid phone Number";
+    // }
 
     if (!this.state.password) {
       passwordError = "password is required";
@@ -99,7 +99,7 @@ export default class Signup extends Component {
       .then((res) => {
         window.location = "/loginC";
       })
-      .catch((err) => console.log("email already exists"));
+      .catch((err) => console.log(err));
   }
 
   render() {

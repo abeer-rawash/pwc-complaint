@@ -178,11 +178,9 @@ router.get("/addcomplaint/:id", function (req, res) {
 router.patch("/addcomplaint/update/:id", function (req, res) {
   Complaint.findByIdAndUpdate(req.params.id, req.body)
     .then(function () {
-      console.log("req.body", req.body);
       res.json("Complaint updated");
     })
     .catch(function (err) {
-      console.log("yessss");
       res.status(422).send("Complaint update failed");
     });
 });
