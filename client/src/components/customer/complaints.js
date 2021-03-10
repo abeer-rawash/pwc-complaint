@@ -26,7 +26,7 @@ class ComplaintsList extends Component {
     let customerId = decoded._id;
 
     axios
-      .get("/app/fetchcomplaints/" + customerId)
+      .get("/app/fetchcomplaints")
       .then((res) => {
         console.log(res.data, "res");
         this.setState({ complaints: res.data });
