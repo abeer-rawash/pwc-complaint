@@ -20,10 +20,11 @@ class ComplaintsList extends Component {
       complaints: [],
     };
   }
+
   componentDidMount() {
-    let token = localStorage.getItem("token");
-    var decoded = jwt_decode(token);
-    let customerId = decoded._id;
+    // let token = localStorage.getItem("token");
+    // var decoded = jwt_decode(token);
+    // let customerId = decoded._id;
 
     axios
       .get("/app/fetchcomplaints")

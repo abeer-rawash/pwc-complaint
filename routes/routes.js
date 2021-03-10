@@ -88,7 +88,7 @@ router.post("/addcomplaint", async (req, res) => {
 });
 
 //GET Complaints by ID
-router.get("/fetchcomplaints/:id", async function (req, res) {
+router.get("/fetchcomplaints", async function (req, res) {
   await Complaint.find()
     .populate("customerId")
     .exec((err, complaints) => {
