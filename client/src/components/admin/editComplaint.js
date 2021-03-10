@@ -14,7 +14,7 @@ export default class EditComplaint extends Component {
     };
   }
 
-  componentDidMount() {
+  useEffect() {
     axios
       .get("/app/addcomplaint/" + this.props.match.params.id)
       .then((response) => {
